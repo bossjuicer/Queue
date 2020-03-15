@@ -41,6 +41,54 @@ class Queue:
 		if self.front==None:
 			print("q is empty")
 		print(self.que[self.front])
+		
+		
+class Stack:  ##create stack class for interleaving and reverse of a specific part of queue
+	def __init__(self):
+		self.stk=[]
+	def is_empty(self):
+		return len(self.stk)<=0
+	def push(self,item):
+		self.stk.append(item)
+	def pop(self):
+		if len(self.stk)<=0:
+			print("stack underflow")
+		else:
+			self.stk.pop()
+	def size(self):
+		return len(self.stk)
+	
+		
+		
+	def interleaving(self):##to check wheather given Queu is interleave or not 
+		                  #Exmpple=input-[1,2,3,4,5,6,7,8,9,10]  // output=[1,6,2,7,3,8,4,9,5,10]                                       
+		stk=Stack()
+		half=que.size()//2
+		for i in range(0,half):
+			stk.push(que.dqueu())
+		while not stk.is_Empty():
+			que.enqueu(stk.pop())
+		for i in range(0,half):
+			que.enqueu(que.dqueu())
+		for i in range(0,half):
+			stk.push(que.dqueu())
+		while not stk.is_Empty():
+			que.enqueu(stk.pop())
+			que.enqueu(que.dqueu())
+			
+			
+	def reverseK(self,k): ##to reverse a part of Queue and reamainig queue intactas it is 
+		                #emple=[1,2,3,4,5,6,7,8,9]//k=4// output =[4,3,2,1,5,6,7,8,9]
+		stk=Stack()
+		if self.q==0 or k>len(self.q):
+			return
+		for i in range(0,k):
+			stk.push(que.dqueu())
+		while not stk.is_Empty():
+			que.enqueu(stk.pop())
+		for i in range(0,len(self.q)-k):
+			que.enqueu(que.dqueu())		
+			
 
 				
 
